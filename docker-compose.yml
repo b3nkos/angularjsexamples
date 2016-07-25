@@ -1,0 +1,11 @@
+web:
+  build: images/nodejs
+  user: angularexample
+  volumes:
+    - "./app:/app"
+  working_dir: /app
+  environment:
+    - "NODE_ENV=local"
+  ports:
+    - "3000:3000"
+  command: "http-server /app -p 3000 -a 0.0.0.0 --cors -c -1"
